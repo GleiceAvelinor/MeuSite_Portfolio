@@ -101,23 +101,23 @@
     </footer>
     <script>
         document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Impede o envio padrão
+  event.preventDefault(); 
 
-  // Captura os valores dos campos
+  
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const message = document.getElementById('message').value.trim();
 
-  // Validação simples
+  
   if (!name || !email || !message) {
     alert('Por favor, preencha todos os campos.');
     return;
   }
 
-  // Aqui você poderia enviar os dados via fetch/AJAX ou apenas exibir uma mensagem
+  
   alert('Mensagem enviada com sucesso!');
 
-  // Opcional: limpar os campos
+  
   document.getElementById('contact-form').reset();
 });
     </script>
@@ -125,30 +125,30 @@
 </html>
 <script>
     (function() {
-        emailjs.init("user_1234567890abcdef"); // Substitua pelo seu User ID do EmailJS
+        emailjs.init("user_1234567890abcdef"); 
     })();
     document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Impede o envio padrão do formulário
+        event.preventDefault(); 
 
-        // Captura os valores dos campos
+        
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
 
-        // Validação simples
+
         if (!name || !email || !message) {
             alert('Por favor, preencha todos os campos.');
             return;
         }
 
-        // Envia o e-mail usando EmailJS
+        
         emailjs.send("service_id", "template_id", {
             from_name: name,
             from_email: email,
             message: message
         }).then(function(response) {
             alert('Mensagem enviada com sucesso!');
-            document.getElementById('contact-form').reset(); // Limpa os campos do formulário
+            document.getElementById('contact-form').reset(); 
         }, function(error) {
             alert('Erro ao enviar mensagem: ' + JSON.stringify(error));
         });
@@ -159,4 +159,5 @@
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
 
 <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/
+
 
